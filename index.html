@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monthly Poet — AI vs Human. Once a month. One poem.</title>
+  <meta name="description" content="Write a 16-line poem each month using 4 Wordle words from last month. Submit to unlock the gallery, vote on your favourite, and guess the AI.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Monthly Poet</div>
+      <nav class="links">
+        <a href="#how">How it works</a>
+        <a href="#rules">Rules</a>
+        <a href="#archive">Archive</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>AI vs Human. Once a month. One poem.</h1>
+          <p>
+            Write a <strong>max 16-line</strong> poem on the monthly theme using
+            <strong>4 Wordle words</strong> from last month. Submit to see everyone’s entries — including one secret AI poem — then vote for your favourite and guess the bot.
+          </p>
+          <div class="cta-row">
+            <a id="submitBtn" class="btn primary" href="#" target="_blank" rel="noopener">Submit your poem</a>
+            <a id="voteBtn" class="btn primary" href="#" target="_blank" rel="noopener">Read & vote</a>
+            <a class="btn ghost" href="#rules">Read the rules</a>
+          </div>
+          <div class="phase-note" id="phaseNote"></div>
+        </div>
+
+        <div class="card">
+          <div class="label">This month</div>
+          <h2>Theme</h2>
+          <p id="theme" class="theme"></p>
+
+          <h3 class="mt">Required Wordle words</h3>
+          <ul id="words" class="words"></ul>
+
+          <div class="meta mt">
+            <div>Submissions close: <span id="subClose"></span></div>
+            <div>Voting closes: <span id="voteClose"></span></div>
+            <div>Reveal: <span id="revealDate"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li>On the 1st of each month, we publish a theme and four Wordle words from the previous month.</li>
+          <li>You write a poem (max 16 lines) that uses all four words. Handwritten drafts welcome.</li>
+          <li>Submit your poem (Days 1–7). Submitting unlocks the gallery & voting the following week.</li>
+          <li>Read the entries (Days 8–14), vote for your favourite, and guess which poem was written by AI.</li>
+          <li>On the 15th, we reveal the winning poem and the secret AI poem, plus fun stats.</li>
+        </ol>
+        <div class="note">
+          <strong>Optional: 60-minute draft challenge.</strong>
+          Set a timer and write your poem within an hour for a “Flash Poet” badge. Totally optional.
+        </div>
+      </div>
+    </section>
+
+    <section id="rules" class="section alt">
+      <div class="container">
+        <h2>Rules</h2>
+        <ul class="rules">
+          <li><strong>Length:</strong> up to 16 lines. Any style: free verse, rhymed, short forms, prose-poetry.</li>
+          <li><strong>Required words:</strong> use all four Wordle words exactly as spelled (plural/tense/possessive allowed).</li>
+          <li><strong>Theme:</strong> your poem should clearly relate to the monthly theme.</li>
+          <li><strong>Anonymity:</strong> submissions are anonymous during voting. Pen names welcome.</li>
+          <li><strong>Eligibility:</strong> by submitting, you unlock access to read & vote that month.</li>
+          <li><strong>Fair play:</strong> write your own poem; don’t use AI to generate it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="archive" class="section">
+      <div class="container">
+        <h2>Archive & Results</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="muted small" id="archiveMonth">August 2025</div>
+            <div class="bold" id="archiveTheme"></div>
+            <div class="small" id="archiveWords"></div>
+            <div class="muted small mt">Winners & AI reveal appear here on the 15th.</div>
+          </article>
+          <article class="card faded">
+            <div class="muted small">July 2025</div>
+            <div class="bold">Theme: The Hidden Line</div>
+            <div class="small">Words: POPPY, DREAD, TIZZY, FRILL</div>
+            <div class="muted small mt">Example past month. Add summaries, links to galleries, and stats.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <div>© <span id="year"></span> Monthly Poet. All rights reserved.</div>
+      <div class="links">
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
