@@ -56,3 +56,28 @@ h2{margin:0 0 12px;font-size:24px}
 .footer{border-top:1px solid var(--border);background:#fff}
 .foot{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
 .foot .links a{margin-left:14px;color:#374151}
+.footer .links {margin-left:8px;color:#701921}
+
+/* ===== Custom Styling for Titles ===== */
+.site-title {
+  font-size: 3rem;       /* Big headline */
+  font-weight: 700;      /* Bold */
+  text-align: center;    /* Centered */
+  margin-bottom: 0.3em;
+  font-family: "Georgia", "Times New Roman", serif; /* Classic poetic style */
+}
+
+.site-subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0.2em;
+  font-style: italic;    /* Subtle elegance */
+}
+
+.site-tagline {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #555;           /* Softer grey tone */
+  margin-bottom: 1.5em;
+}
