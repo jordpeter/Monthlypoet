@@ -110,7 +110,7 @@ h2{margin:0 0 12px;font-size:24px}
   top: 0;
   left: 0;
   height: var(--accent-thickness);
-  width: var(--short-top-ch);   /* adjust until it ends at the 'e' */
+  width: 2.2ch; /* matches width of "The" */
   background: var(--accent);
 }
 
