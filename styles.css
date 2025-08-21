@@ -100,19 +100,18 @@ h2{margin:0 0 12px;font-size:24px}
 }
   padding-bottom: 0.5rem;
   
-/* Short top line that matches the word "The" */
+/* Short top line above "The" – offset by .title-block padding so it meets the vertical */
 .title-block .site-title{
-  position: relative; /* anchor the short line to the H1 */
+  position: relative;   /* anchor the pseudo-element to the H1 */
 }
 
 .title-block .site-title::before{
   content:"";
   position:absolute;
-  /* offset by the title-block padding so it meets the vertical line */
-  top:  calc(0px - var(--title-padding-y));
-  left: calc(0px - var(--title-padding-x));
+  top:  calc(0px - var(--title-padding-y));  /* pull UP by the block's top padding */
+  left: calc(0px - var(--title-padding-x));  /* pull LEFT by the block's left padding */
   height: var(--accent-thickness);
-  width: calc(var(--short-top-ch) + var(--title-padding-x)); /* ends at the 'e' */
+  width:  var(--short-top-ch);               /* ends at the 'e' in "The" */
   background: var(--accent);
 }
 }
