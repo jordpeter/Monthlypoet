@@ -6,18 +6,21 @@
   --card:#ffffff;
   --border:#e7e5e4;
   --primary:#111111;
-  --accent:#fef3c7;
+  --accent:#fef3c7; /* (used elsewhere; the title frame accent is redefined later) */
 }
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
 .container{max-width:1000px;margin:0 auto;padding:0 16px}
 
+/* Nav */
 .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(6px);background:rgba(255,255,255,.8);border-bottom:1px solid var(--border);z-index:10}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .brand{font-weight:800;letter-spacing:.2px}
 .links a{color:var(--text);text-decoration:none;margin-left:16px}
 .links a:hover{text-decoration:underline}
 
+/* Hero */
 .hero{padding:56px 0}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:24px}
 @media(min-width:900px){.hero-grid{grid-template-columns:1.2fr .8fr}}
@@ -29,6 +32,7 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.
 .btn.ghost{background:white}
 .phase-note{margin-top:8px;color:#6b7280;font-size:14px}
 
+/* Card (right column) */
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:inset 0 0 0 9999px rgba(255,255,255,.4)}
 .label{font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.08em}
 .theme{font-size:20px;margin:6px 0 10px}
@@ -37,6 +41,7 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.
 .mt{margin-top:10px}
 .meta{font-size:14px;color:#374151}
 
+/* Sections */
 .section{padding:48px 0}
 .section.alt{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 h2{margin:0 0 12px;font-size:24px}
@@ -46,6 +51,7 @@ h2{margin:0 0 12px;font-size:24px}
 .rules{margin:8px 0 0;padding-left:18px}
 .rules li{margin:6px 0}
 
+/* Grid (archive) */
 .grid{display:grid;grid-template-columns:1fr;gap:16px}
 @media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
 .muted{color:var(--muted)}
@@ -53,100 +59,105 @@ h2{margin:0 0 12px;font-size:24px}
 .bold{font-weight:600}
 .faded{opacity:.7}
 
+/* Footer */
 .footer{border-top:1px solid var(--border);background:#fff}
 .foot{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
 .foot .links a{margin-left:14px;color:#374151}
-.footer .links {margin-left:8px;color:#701921}
-/* Title block with 3-sided red accent */
-/* ============================
+.footer .links{margin-left:8px;color:#701921}
+
+/* =========================
    Title block + 3-sided accent
-   ============================ */
+   ========================= */
 
+/* Accent variables for the frame (redefine here without touching the earlier theme accent) */
 :root{
-  --accent: #B22222;
-  --accent-thickness: 3px;
-  --title-padding-x: 20px;   /* left/right padding on .title-block */
-  --title-padding-y: 16px;   /* top/bottom padding on .title-block */
-  --short-top-ch: 2.3ch;     /* fine-tune the short line length */
+  --frame-accent:#B22222;        /* deep red for the frame */
+  --accent-thickness:3px;        /* thickness for ALL three lines */
+  --title-padding-x:20px;         /* left/right padding INSIDE the frame */
+  --title-padding-y:16px;         /* top/bottom padding INSIDE the frame */
+  --short-top-ch:2.28ch;          /* length of short top line; tweak ±0.02ch */
 }
 
-/* Wrapper that the frame attaches to */
+/* Framed wrapper */
 .title-block{
-  position: relative;
-  display: inline-block;
-  padding: var(--title-padding-y) var(--title-padding-x) var(--title-padding-y) var(--title-padding-x);
+  position:relative;
+  display:inline-block; /* frame hugs the text */
+  padding:var(--title-padding-y) var(--title-padding-x);
+  margin-bottom:.5rem;  /* space before the following paragraph */
 }
 
-/* Left vertical line (full height) */
+/* LEFT vertical line */
 .title-block::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: var(--accent-thickness);
-  height: 100%;
-  background: var(--accent);
-}
-
-/* Bottom horizontal line (full width) */
-.title-block::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: var(--accent-thickness);
-  background: var(--accent);
-}
-  padding-bottom: 0.5rem;
-  
-/* Short top line above "The" – offset by .title-block padding so it meets the vertical */
-.title-block .site-title{
-  position: relative;   /* anchor the pseudo-element to the H1 */
-}
-
-.title-block .site-title::before{
   content:"";
   position:absolute;
-  top:  calc(0px - var(--title-padding-y));  /* pull UP by the block's top padding */
-  left: calc(0px - var(--title-padding-x));  /* pull LEFT by the block's left padding */
-  height: var(--accent-thickness);
-  width:  var(--short-top-ch);               /* ends at the 'e' in "The" */
-  background: var(--accent);
-}
+  top:0; left:0;
+  width:var(--accent-thickness);
+  height:100%;
+  background:var(--frame-accent);
 }
 
-/* Typography hierarchy — clean, left-aligned, sans */
+/* BOTTOM horizontal line */
+.title-block::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:0;
+  width:100%;
+  height:var(--accent-thickness);
+  background:var(--frame-accent);
+}
+
+/* SHORT TOP line aligned with “The” */
+.site-title{ position:relative; }
+.site-title::before{
+  content:"";
+  position:absolute;
+  /* start at the OUTER corner by offsetting by the padding values */
+  top:  calc(0px - var(--title-padding-y));
+  left: calc(0px - var(--title-padding-x));
+  height:var(--accent-thickness);
+  width: var(--short-top-ch);       /* ends at the ‘e’ in “The” */
+  background:var(--frame-accent);
+}
+
+/* Hero title/subtitle/tagline typography */
 .site-title{
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 0 0 .25em 0;
-  color: #111;
-  text-align: left;
+  font-size:3rem;
+  font-weight:700;
+  line-height:1.1;
+  margin:0 0 .25rem 0;
+  color:#111;
+  text-align:left;
 }
-
 .site-subtitle{
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0 0 .25em 0;
-  color: #333;
-  text-align: left;
+  font-size:1.5rem;
+  font-weight:500;
+  margin:0 0 .5rem 0;
+  color:#333;
+  text-align:left;
 }
-
 .site-tagline{
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0;
-  color: #666;
-  text-align: left;
+  font-size:1.2rem;
+  font-weight:400;
+  margin:0 0 .75rem 0;
+  color:#666;
+  text-align:left;
 }
 
-/* Optional: slightly shorter accent on small screens */
-@media (max-width: 600px){
+/* Intro paragraph under the frame */
+.lead{
+  display:block;
+  margin:.75rem 0 1.25rem 0;
+  color:#222;
+  line-height:1.55;
+}
+
+/* Mobile tuning */
+@media (max-width:600px){
   :root{
-    --short-top-ch: 2.4ch;     /* tiny tweak for mobile rendering */
-    --title-padding-x: 16px;
-    --title-padding-y: 12px;
+    --short-top-ch:2.26ch;   /* tiny trim for phones */
+    --title-padding-x:16px;
+    --title-padding-y:12px;
   }
+  .site-title{font-size:2.4rem}
+  .site-subtitle{font-size:1.3rem}
 }
