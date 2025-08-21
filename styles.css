@@ -63,11 +63,11 @@ h2{margin:0 0 12px;font-size:24px}
    ============================ */
 
 :root{
-  --accent: #B22222;          /* deep red */
-  --accent-thickness: 3px;   /* line thickness */
-  --title-padding-x: 20px;    /* inside spacing right */
-  --title-padding-y: 16px;    /* inside spacing top/bottom */
-  --short-top-ch: 2.3ch;      /* length of the short top line */
+  --accent: #B22222;
+  --accent-thickness: 3px;
+  --title-padding-x: 20px;   /* left/right padding on .title-block */
+  --title-padding-y: 16px;   /* top/bottom padding on .title-block */
+  --short-top-ch: 2.3ch;     /* fine-tune the short line length */
 }
 
 /* Wrapper that the frame attaches to */
