@@ -110,9 +110,9 @@ h2{margin:0 0 12px;font-size:24px}
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0; /* makes sure it touches the vertical line */
   height: var(--accent-thickness);
-  width: 2.2ch; /* matches width of "The" */
+  width: 2.2ch;  /* tweak width until it matches "The" */
   background: var(--accent);
 }
 
