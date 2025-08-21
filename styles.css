@@ -75,7 +75,7 @@ h2{margin:0 0 12px;font-size:24px}
   --accent-thickness:3px;        /* thickness for ALL three lines */
   --title-padding-x:20px;         /* left/right padding INSIDE the frame */
   --title-padding-y:16px;         /* top/bottom padding INSIDE the frame */
-  --short-top-ch:2.28ch;          /* length of short top line; tweak ±0.02ch */
+  --short-top-ch:2.3ch;          /* length of short top line; tweak ±0.02ch */
 }
 
 /* Framed wrapper */
