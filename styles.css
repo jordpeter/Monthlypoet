@@ -73,9 +73,8 @@ h2{margin:0 0 12px;font-size:24px}
 /* Wrapper that the frame attaches to */
 .title-block{
   position: relative;
-  display: inline-block;                 /* frame hugs the text */
+  display: inline-block;
   padding: var(--title-padding-y) var(--title-padding-x) var(--title-padding-y) var(--title-padding-x);
-  padding-left:  calc(var(--title-padding-x));  /* keep left padding symmetrical */
 }
 
 /* Left vertical line (full height) */
