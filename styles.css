@@ -64,7 +64,7 @@ h2{margin:0 0 12px;font-size:24px}
 
 :root{
   --accent: #B22222;          /* deep red */
-  --accent-thickness: 3px;   /* choose 3px or 4px */
+  --accent-thickness: 3px;   /* line thickness */
   --title-padding-x: 20px;    /* inside spacing right */
   --title-padding-y: 16px;    /* inside spacing top/bottom */
   --short-top-ch: 2.6ch;      /* length of the short top line */
