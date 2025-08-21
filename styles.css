@@ -99,21 +99,23 @@ h2{margin:0 0 12px;font-size:24px}
   height: var(--accent-thickness);
   background: var(--accent);
 }
-
   padding-bottom: 0.5rem;
   
 /* Short top line that matches the word "The" */
 .title-block .site-title{
   position: relative; /* anchor the short line to the H1 */
 }
+
 .title-block .site-title::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0; /* makes sure it touches the vertical line */
+  content:"";
+  position:absolute;
+  /* offset by the title-block padding so it meets the vertical line */
+  top:  calc(0px - var(--title-padding-y));
+  left: calc(0px - var(--title-padding-x));
   height: var(--accent-thickness);
-  width: 2.2ch;  /* tweak width until it matches "The" */
+  width: calc(var(--short-top-ch) + var(--title-padding-x)); /* ends at the 'e' */
   background: var(--accent);
+}
 }
 
 /* Typography hierarchy — clean, left-aligned, sans */
