@@ -32,6 +32,14 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.
   line-height: 1.6;       /* improves readability */
   max-width: 55ch;        /* keeps text line length comfortable */
 }
+/* Mobile tweak for tagline */
+@media (max-width: 600px) {
+  .site-tagline {
+    font-size: 0.95rem;   /* slightly smaller on phones */
+    line-height: 1.4;     /* keep it airy */
+    margin-bottom: 0.8rem;
+  }
+}
 /* Tagline styling */
 .site-tagline {
   font-style: italic;       /* softer, inviting look */
