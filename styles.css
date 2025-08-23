@@ -32,6 +32,14 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.
   line-height: 1.6;       /* improves readability */
   max-width: 55ch;        /* keeps text line length comfortable */
 }
+/* Tagline styling */
+.site-tagline {
+  font-style: italic;       /* softer, inviting look */
+  font-weight: 300;         /* lighter than normal text */
+  color: #555;              /* softer gray */
+  font-size: 1.1rem;        /* slightly smaller than normal paragraph */
+  margin-bottom: 1rem;      /* adds spacing before the next section */
+}
 .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
 .btn{display:inline-block;padding:10px 14px;border-radius:16px;border:1px solid var(--border);background:var(--card);color:var(--text);text-decoration:none;box-shadow:0 1px 0 rgba(0,0,0,.05)}
 .btn.primary{background:var(--primary);color:white;border-color:var(--primary)}
